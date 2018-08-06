@@ -1,0 +1,4 @@
+apiVersion: "zenko.io/v1alpha1"
+kind: "Zenko"
+metadata:
+  name: "example"

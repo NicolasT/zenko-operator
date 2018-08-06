@@ -1,0 +1,3 @@
+apiVersion: zenko.io/v1alpha1
+kind: Zenko
+projectName: zenko-operator
