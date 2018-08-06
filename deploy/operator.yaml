@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zenko-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: zenko-operator
+  template:
+    metadata:
+      labels:
+        name: zenko-operator
+    spec:
+      containers:
+        - name: zenko-operator
+          image: docker.io/nicolast/zenko-operator:0.0.0
+          imagePullPolicy: Always
+          env:
+            - name: WATCH_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
