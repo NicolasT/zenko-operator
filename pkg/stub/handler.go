@@ -113,7 +113,7 @@ func (h *Handler) installZenko(o *v1alpha1.Zenko) error {
 		helm.InstallReuseName(false),
 		helm.InstallDisableHooks(false),
 		helm.InstallTimeout(300),
-		helm.InstallWait(true))
+		helm.InstallWait(false))
 
 	if err != nil {
 		return err
@@ -182,7 +182,7 @@ func (h *Handler) updateZenko(o *v1alpha1.Zenko) error {
 		helm.UpgradeTimeout(300),
 		helm.ResetValues(true),
 		helm.ReuseValues(false),
-		helm.UpgradeWait(true))
+		helm.UpgradeWait(false))
 	if err != nil {
 		return err
 	}
