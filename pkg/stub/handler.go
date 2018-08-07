@@ -189,6 +189,7 @@ func (h *Handler) updateZenko(o *v1alpha1.Zenko) error {
 
 	deployedConfigurationHash := fmt.Sprintf("%x", sha256.Sum256(newValues))
 
+        // TODO Only set this when it's actually deployed, or something
 	o.Status.DeployedVersion = o.Spec.AppVersion
 	o.Status.DeployedConfigurationHash = deployedConfigurationHash
 	err = sdk.Update(o)
