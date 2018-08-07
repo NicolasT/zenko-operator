@@ -1,4 +1,7 @@
 apiVersion: "zenko.io/v1alpha1"
 kind: "Zenko"
 metadata:
-  name: "example"
+  name: "myzenko"
+spec:
+  appVersion: 1.0.0-rc2
+  nodeCount: 1

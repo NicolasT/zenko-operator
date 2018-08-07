@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/types"
 )
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -22,8 +23,11 @@ type Zenko struct {
 }
 
 type ZenkoSpec struct {
-	// Fill me
+	AppVersion string `json:"appVersion,requireed"`
+	NodeCount  int    `json:"nodeCount"`
 }
 type ZenkoStatus struct {
-	// Fill me
+	InstanceID                types.UID `json:"instanceID"`
+	DeployedVersion           string    `json:"deployedVersion"`
+	DeployedConfigurationHash string    `json:"deployedConfigurationHash"`
 }
